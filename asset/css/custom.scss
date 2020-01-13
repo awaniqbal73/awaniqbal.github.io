@@ -1,14 +1,66 @@
 $myFont: Helvetica, sans-serif;
-$myColor: red;
-$myFontSize: 18px;
-$myWidth: 680px;
+$myColor: rgba(0,0,0,0.54);
+$myFontSize: 12px;
 
 body {
+  margin:0px;
   font-family: $myFont;
   font-size: $myFontSize;
   color: $myColor;
 }
+.bg-my{
+  height: 100vh;
+  width: 100%;
+}
+.box-header{
+  position: absolute;
+  margin: 20px;
+  right: 0;
+}
+.info-me{
+  margin: 20px;
+  left: 0;
+}
+.box-sapaan{
+  position: relative;
+  font-size:4rem;
+  color:#fff;
+  font-weight: bold;
+}
+.mg-12{
+  margin-left:4rem;
+  width: 100%;
+  line-height: 30px;
+}
+.img-ps{
+  width: 30px;
+  height: 30px;
+  margin-top:10px;
+  margin-right:10px;
+  margin-left:25px;
+}
+.ps-dow{
+  position: absolute ;
+  right: 0;
+}
+.tq{
+  color:#fff;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+}
 
-#container {
-  width: $myWidth;
+.chart {
+  position: relative;
+  display: inline-block;
+  margin: 20px 10px;
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
