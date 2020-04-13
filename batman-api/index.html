@@ -101,7 +101,7 @@
     </div>
     <script>
         $(document).ready(function () {
-            $.getJSON("http://api.tvmaze.com/search/shows?q=batman", function (data) {
+            $.getJSON("https://api.tvmaze.com/search/shows?q=batman", function (data) {
                 $.each(data, function (i) {
                     $("#isi").append("<tr><td class='text-left'>" + this[
                             'show']['name'] + "</td><td class='text-left'>" + this['show']['genres'] +
