@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th {
+            color: #fff;
+            background-color: #000;
+            font-size: 2rem;
+            padding: 20px 10px !important;
+        }
+
+        td {
+            color: #000;
+            font-size: 1.5rem;
+            vertical-align: middle !important;
+            text-align: center;
+        }
+
+        .btn-info {
+            color: #f9d83d !important;
+            background-color: #000 !important;
+            border: 0px !important;
+            text-transform: uppercase !important;
+            font-weight: bold !important;
+            border-radius: 0px !important;
+        }
+
+
+
+        .img {
+            width: 300px;
+            margin: auto;
+            display: block;
+        }
+
+        .box-summary {
+            font-size: 1rem;
+            margin-top: 1rem;
+            text-align: justify;
+            width: 100%;
+            padding: 10px;
+            color: #ddd;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1.4rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .modal-body {
+            background-color: #000;
+        }
+
+        .modal {
+            background: #232322e0;
+        }
+
+        .judul {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            font-family: 'Bangers', cursive;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .box-content{
+            border:1px solid #ddd;
+            margin: 60px 0px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="box-content">
+            <div class="text-center judul">
+                <h1>BATMAN TV Get Post API</h1>
+            </div>
+            <table class="table table-striped" id="isi">
+                <tr>
+                    <th>NAME</th>
+                    <th>GENRES</th>
+                    <th class="text-center">JADWAL</th>
+                    <th class="text-center">RATING</th>
+                    <th class="text-center">SINOPSIS</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.getJSON("http://api.tvmaze.com/search/shows?q=batman", function (data) {
+                $.each(data, function (i) {
+                    $("#isi").append("<tr><td class='text-left'>" + this[
+                            'show']['name'] + "</td><td class='text-left'>" + this['show']['genres'] +
+                        "</td><td>" + this['show']['schedule']['days'] + "</td><td>" + this[
+                            'show']['rating']['average'] +
+                        "</td><td><button type='button' class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal" +
+                        i + "'>Info</button><div id='myModal" + i +
+                        "' class='modal fade' role='dialog'><div class = 'modal-dialog' ><div class = 'modal-content' ><div class = 'modal-body'> <div class='title'>" +
+                        this[
+                            'show']['name'] + "</div><img class='img' src='" + this[
+                            'show']['image']['medium'] + "'/> <div class='box-summary'>" +
+                        this[
+                            'show']['summary'] + "</div></div></div></div> </div></tr>");
+                    console.log(i);
+                });
+            });
+        });
+    </script>
+</body>
