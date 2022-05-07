@@ -1,0 +1,6 @@
+git init
+git status
+git add .
+git commit -m "sample"
+git remote add origin https://github.com/awaniqbal73/awaniqbal73.github.io
+git push -u origin master
