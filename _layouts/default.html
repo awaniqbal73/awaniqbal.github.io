@@ -13,4 +13,10 @@
 
     {% include footer.html %}
   </body>
+  <script>
+    // WITHOUT Timelines (only using tweens with delays):
+      gsap.to("#testid", {x: 100, duration: 1});
+      gsap.to("#testid", {y: 50, duration: 1, delay: 1});      //wait 1 second
+      gsap.to("#testid", {opacity: 0, duration: 1, delay: 2}); //wait 2 seconds
+  </script>
 </html>
